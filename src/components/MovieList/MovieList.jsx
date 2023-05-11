@@ -1,5 +1,6 @@
 import { MovieItem } from "components/MovieItem/MovieItem";
 import { Section, List } from "./MovieList.styled";
+import PropTypes from 'prop-types';
 
 export const MovieList = ({ movie, location }) => {
   return (
@@ -10,4 +11,11 @@ export const MovieList = ({ movie, location }) => {
 
     </Section>
   )
+};
+
+MovieList.propTypes = {
+  movie: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }).isRequired).isRequired,
+  location: PropTypes.shape().isRequired,
 };

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Container, Span, Title, Wrapper, Text, Link, Main, NavLink } from "./MovieCard.styled";
 import { useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export const MovieCard = ({ movie }) => {
   const { title, release_date, poster_path, vote_average, overview, genres } = movie;
@@ -31,4 +32,17 @@ export const MovieCard = ({ movie }) => {
       </Wrapper>
     </Main>
   )
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    release_date: PropTypes.string,
+    poster_path: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.arrayOf(
+      PropTypes.shape({ name: PropTypes.string })
+    ),
+  }).isRequired,
 };

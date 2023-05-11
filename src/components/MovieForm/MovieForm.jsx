@@ -1,5 +1,6 @@
 import { Input, Form, Button } from "./MovieForm.styled";
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 export const MovieForm = ({ onSubmit }) => {
   const [value, setValue] = useState('');
@@ -23,4 +24,8 @@ export const MovieForm = ({ onSubmit }) => {
       <Button type="submit">Search</Button>
     </Form>
   )
+};
+
+MovieForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
