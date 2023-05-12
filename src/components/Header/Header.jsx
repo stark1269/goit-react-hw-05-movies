@@ -4,8 +4,8 @@ export const Header = () => {
   return (
     <HeaderStyled>
       <Nav>
-        <Link to={'/'}>Home</Link>
-        <Link to={'/movie'}>Movie</Link>
+        <Link to='/' >Home</Link>
+        <Link to='/movie' >Movie</Link>
       </Nav>
     </HeaderStyled>
   )
