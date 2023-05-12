@@ -15,7 +15,7 @@ const MovieDetails = () => {
         const res = await getFullMovieInfo(movieId);
         setMovie(res);
       } catch (error) {
-        console.log(error.message)
+        alert(error.message);
       };
     };
 

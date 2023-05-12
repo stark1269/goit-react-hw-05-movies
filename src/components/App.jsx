@@ -15,15 +15,15 @@ export const App = () => {
       <Header />
       <Suspense fallback={<TailSpin />}>
         <Routes>
-          <Route path={'/'} element={<Home />} />
-          <Route path={'/movie'} element={<Movie />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/movie' element={<Movie />} />
 
-          <Route path={'/movies/:movieId'} element={<MovieDetails />}>
-            <Route path={'cast'} element={<Cast />} />
-            <Route path={'reviews'} element={<Reviews />} />
+          <Route path='/movies/:movieId' element={<MovieDetails />}>
+            <Route path='cast' element={<Cast />} />
+            <Route path='reviews' element={<Reviews />} />
           </Route>
 
-          <Route path={'*'} element={<Navigate to="/" />} />
+          <Route path='*' element={<Navigate to="/" />} />
 
         </Routes>
       </Suspense>

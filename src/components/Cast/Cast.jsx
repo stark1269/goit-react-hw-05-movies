@@ -13,7 +13,7 @@ const Cast = () => {
         const {cast} = await getMovieCast(movieId);
         setMovie(cast);
       } catch (error) {
-        console.log(error.message);
+        alert(error.message);
       }
     };
 

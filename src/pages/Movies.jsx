@@ -19,10 +19,13 @@ const Movie = () => {
       try {
         const res = await getSearchMovie(query);
         setMovie(res)
+        if (!res.length) {
+          alert('Please enter a valid movie name');
+        }
       } catch (error) {
-        
+        alert(error.message);
       }
-    }
+    };
 
     getMovie();
 

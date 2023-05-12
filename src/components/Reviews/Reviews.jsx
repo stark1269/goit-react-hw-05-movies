@@ -13,7 +13,7 @@ const Reviews = () => {
         const { results } = await getMovieReviews(movieId);
         setMovie(results);
       } catch (error) {
-        console.log(error.message);
+        alert(error.message);
       }
     };
 
