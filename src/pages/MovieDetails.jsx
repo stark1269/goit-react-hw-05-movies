@@ -7,16 +7,20 @@ import { TailSpin } from  'react-loader-spinner'
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
+  const [isLoader, setIsLoader] = useState(false);
   const { movieId } = useParams();
 
   useEffect(() => {
     const getFilmInfo = async () => {
       try {
+        setIsLoader(true);
         const res = await getFullMovieInfo(movieId);
         setMovie(res);
       } catch (error) {
         alert(error.message);
-      };
+      } finally {
+        setIsLoader(false);
+      }
     };
 
     getFilmInfo();
@@ -24,7 +28,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <MovieCard movie={movie} />
+      {isLoader ? <TailSpin /> : <MovieCard movie={movie} />}
       <Suspense fallback={<TailSpin />}>
         <Outlet />
       </Suspense>
